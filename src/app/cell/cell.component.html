@@ -1,0 +1,10 @@
+<div 
+[ngClass]="clicked ? block === 1 ? 'coloredBlock' : 'coloredHole' : 'empty'"
+style="
+height: 3rem;
+width: 3rem;
+border: 1px solid;
+cursor: pointer;
+"
+(click)="cellClicked()"
+></div>

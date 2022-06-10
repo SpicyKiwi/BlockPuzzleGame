@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0
+}
+
+.coloredBlock {
+    background-color: rgb(71, 69, 69);
+}
+
+.coloredHole {
+    background-color: red;
+}
+
+.empty {
+    background-color: white;
+}
+
+.empty:hover {
+    background-color: rgb(230, 230, 230);
+}

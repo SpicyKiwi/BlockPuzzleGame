@@ -1,0 +1,51 @@
+
+<div>
+
+    <div
+    class="columnsHintContainer"
+    style="
+    display: flex;
+    justify-content: end;
+    height: 100%
+    "
+    >
+        <app-column-hints *ngFor="let column of columnHints" [columnHints]="column"> </app-column-hints>
+    </div>
+
+    <div
+    style="
+    display: flex;
+    ">
+        
+
+        <div>
+            <app-row-hints *ngFor="let row of rowHints" [rowHints]="row"></app-row-hints>
+        </div>
+
+        <div>
+            <div *ngFor="let row of gameBoard; let rowIdx = index" style="display: flex;">
+                <app-cell *ngFor="let column of row; let columnIdx = index"
+                [rowIdx]="rowIdx"
+                [columnIdx]="columnIdx"
+                [block]="gameBoard[rowIdx][columnIdx]"
+                [lives]="lives"
+                (lifeEvent)="updateLives($event)"
+                [score]="score"
+                (scoreEvent)="updateScore($event)">
+                
+                </app-cell>
+        
+                
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+
+</div>
+
+<app-score [lives]="lives"></app-score>
+
